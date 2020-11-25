@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f1923;
+  font-family: 'Muli', sans-serif;
+}
+
+.btn {
+  text-decoration: none;
+  color: #ff4655;
+  text-transform: uppercase;
+  font-size: 14px;
+  border: 1px solid #ff4655;
+  padding: 20px 60px;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.btn__border {
+  border: 1px solid rgba(236, 232, 225, 0.3);
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  z-index: -10;
+}
+
+.btn__border::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: 8px;
+  background-color: #0f1923;
+  transform: translateY(-50%);
+}
+
+.btn__slider {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  overflow: hidden;
+  z-index: -10;
+}
+
+.btn__slider::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 100%;
+  background-color: #ff4655;
+  transform: translateX(-105%) skewX(-30deg);
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  color: #fff;
+}
+
+.btn:hover .btn__slider::before {
+  transform: translateX(-10%) skewX(-30deg);
+
+}
